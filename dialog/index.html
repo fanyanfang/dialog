@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<ul id="product">
+		<li><label>小李子那是啥地方啊1</label><input type="button"value="删除"></li>
+		<li><label>小李子那是啥地方啊2</label><input type="button"value="删除"></li>
+		<li><label>小李子那是啥地方啊3</label><input type="button"value="删除"></li>
+		<li><label>小李子那是啥地方啊4</label><input type="button"value="删除"></li>
+	</ul>
+	<script src="js/jquery.js"></script>
+	<script src="js/js.js"></script>
+	<script>
+		$("#product").on("click","input",function(){
+			var delObj=$(this).parent("li")
+			$.dailog({
+				msg:"你确定要删除吗?",
+				btn:["确定","取消"],
+				callback1:function(){
+					delObj.remove();
+				}
+			})	
+		})
+			
+	</script>
+</body>
+</html>
